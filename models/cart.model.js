@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cartItemSchema = new mongoose.Schema({
   product: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "product",   // 👈 EXACT model name
+    ref: "products",   // 👈 EXACT model name
     required: true
   },
   quantity: {
@@ -23,5 +23,5 @@ const cartSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-module.exports = mongoose.model("CartModel", cartSchema);
+const CartModel = mongoose.model("cartmodel",cartSchema)
+module.exports = CartModel

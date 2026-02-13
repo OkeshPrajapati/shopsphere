@@ -5,6 +5,7 @@ const connectDb = require("./config/db");
 const authRoutes = require("./routes/authRoute");
 const productRoutes = require("./routes/productRoute");
 const errorHandler = require("./middleware/errorMiddleware");
+const cartRoutes = require("./routes/cartRoute");
 
 
 // Initialize Express
@@ -23,6 +24,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 
 app.use(errorHandler);
 
